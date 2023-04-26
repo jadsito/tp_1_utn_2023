@@ -39,6 +39,7 @@ else:
 # -----------------------------------------------------------------------------------------------------------------#
 # Ejercicio 2
 # -----------------------------------------------------------------------------------------------------------------#
+
 if pais_cab_peaje == 0: 
     valor_fijo = 300
 elif pais_cab_peaje == 1:
@@ -80,13 +81,41 @@ else:
         clas_vehiculo = "camión"
         dto = valor_fijo * 60 // 100  
         valor_total = valor_fijo - dto
- # -----------------------------------------------------------------------------------------------------------------#
+
+# -----------------------------------------------------------------------------------------------------------------#
 # Ejercicio 3
 # -----------------------------------------------------------------------------------------------------------------#
 
+desc = 0
+if form_pago == 1:
+   desc = valor_fijo * 0.90
+
+# -----------------------------------------------------------------------------------------------------------------#
+# Ejercicio 4
+# -----------------------------------------------------------------------------------------------------------------#
+
+if desc != 0:
+    valor_prom = round(desc / distancia)
+else:
+    valor_prom = round(valor_fijo / distancia)
+
 
 # salida
-print("La patente: ", mercosur)
-print("La patente pertenece a: ", pais)
-
+# 1
+if len(patente) == 7:
+    print("La patente pertenece al mercosur y es procedente de: ", pais)
+else:
+    print("La patente no pertenece al mercosur")
+# 2
 print("El valor de la etiqueta es: ", valor_fijo, ", ya que su vehículo es de tipo: ", clas_vehiculo, ", tiene un descuento que le modificará y le quedará un total de: ", valor_total)
+# 3
+if form_pago == 1:
+    print("debido a su pago mediante telepeaje se le hizo un descuento del 10% quedando: ", desc)
+else:
+    print(("su pago fue manual, quedando un total de: ", valor_fijo))
+   
+# 4
+if distancia == 0:
+    print("la distancia es 0")
+else:
+    print("el valor promedio pagado por ese vehículo por cada kilómetro recorrido desde la última cabina es de: ", valor_prom)
