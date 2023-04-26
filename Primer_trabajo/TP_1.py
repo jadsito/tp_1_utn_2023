@@ -14,7 +14,9 @@ pais_cab_peaje = int(input("Ingrese de las opciones anteriores en qué país est
 distancia = float(input("Ingrese la distancia recorrida desde la ultima cabina de peaje (si ésta es la primera, indique con un 0): "))
 
 # proceso
-
+# -----------------------------------------------------------------------------------------------------------------#
+# ejercicio 1
+# -----------------------------------------------------------------------------------------------------------------#
 if len(patente) == 7: # Define si pertenece o no al mercosur
     mercosur = "pertenece al mercosur"
 else:
@@ -34,7 +36,9 @@ elif patente[0:3].isalpha() and patente[3:7].isnumeric():
 else:
     pais= "otro país"
 
-
+# -----------------------------------------------------------------------------------------------------------------#
+# Ejercicio 2
+# -----------------------------------------------------------------------------------------------------------------#
 if pais_cab_peaje == 0: 
     valor_fijo = 300
 elif pais_cab_peaje == 1:
@@ -42,6 +46,7 @@ elif pais_cab_peaje == 1:
     if clas_vehiculo == 0:
         clas_vehiculo = "motocicleta"
         dto = valor_fijo * 50 // 100
+        valor_total = valor_fijo - dto
     elif clas_vehiculo == 2:
         clas_vehiculo = "camión"
         dto = valor_fijo * 60 // 100  
@@ -63,18 +68,21 @@ elif pais_cab_peaje == 3:
         dto = valor_fijo * 50 // 100
     elif clas_vehiculo == 2:
         clas_vehiculo = "camión"
-        dto = valor_fijo * 60 // 100  
+        dto = valor_fijo * 60 // 100 
+        valor_total = valor_fijo - dto
 else:
     valor_fijo = 300
     if clas_vehiculo == 0:
         clas_vehiculo = "motocicleta"
         dto = valor_fijo * 50 // 100
+        valor_total = valor_fijo - dto
     elif clas_vehiculo == 2:
         clas_vehiculo = "camión"
         dto = valor_fijo * 60 // 100  
+        valor_total = valor_fijo - dto
 
 # salida
 print("La patente: ", mercosur)
 print("La patente pertenece a: ", pais)
 
-
+print("El valor de la etiqueta es: ", valor_fijo, ", ya que su vehículo es de tipo: ", clas_vehiculo, ", tiene un descuento que le modificará y le quedará un total de: ", valor_total)
