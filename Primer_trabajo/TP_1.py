@@ -112,7 +112,7 @@ print("El valor de la etiqueta es: ", valor_fijo, ", ya que su vehículo es de t
 if form_pago == 1:
     print("debido a su pago mediante telepeaje se le hizo un descuento del 10% quedando: ", desc)
 else:
-    print(("su pago fue manual, quedando un total de: ", valor_fijo))
+    print(("su pago fue manual, quedando un total de: ", valor_total))
    
 # 4
 if distancia == 0:
