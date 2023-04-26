@@ -93,11 +93,12 @@ if form_pago == 1:
 # -----------------------------------------------------------------------------------------------------------------#
 # Ejercicio 4
 # -----------------------------------------------------------------------------------------------------------------#
-
-if desc != 0:
-    valor_prom = round(desc / distancia)
-else:
-    valor_prom = round(valor_fijo / distancia)
+valor_prom = 0
+if distancia != 0:
+    if desc != 0:
+        valor_prom = round(desc / distancia)
+    else:
+        valor_prom = round(valor_total / distancia)
 
 
 # salida
